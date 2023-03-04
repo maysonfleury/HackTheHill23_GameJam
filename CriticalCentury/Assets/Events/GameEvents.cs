@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameEvents : ScriptableObject
 {
     [Header("Event Information")]
-    public readonly string event_name;
-    public readonly string event_description;
+    public string event_name;
+    public string event_description;
 
 }

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa302eb6f6ba44146af19eed1025178b, type: 3}
+  m_Name: R&D1-Galvanometer
+  m_EditorClassIdentifier: 
+  upgrade_name: Galvanometer
+  upgrade_description: Allows monitoring of energy production
+  upgrade_cost: 1000
+  upgrade_duration: 1
+  prerequisites: []
+  money_output: 0
+  energy_output: 0
+  emission_output: 0
+  happiness_output: 0
+  triggered_event: {fileID: 11400000, guid: 383da9957ba994699966ed75985523f1, type: 2}

@@ -10,7 +10,7 @@ public class Building : MonoBehaviour
     [SerializeField] private int building_level; 
     [SerializeField] private List<Sprite> building_icons;
 
-    private List<Upgrade> available_upgrades;
+    [SerializeField] private List<Upgrade> available_upgrades;
     [SerializeField] private List<Upgrade> level1_upgrades;
     [SerializeField] private List<Upgrade> level2_upgrades;
     [SerializeField] private List<Upgrade> level3_upgrades;
@@ -26,16 +26,16 @@ public class Building : MonoBehaviour
         building_level += 1;
 
         if (building_level == 1)
-            available_upgrades = new List<Upgrade>(level1_upgrades);
+            available_upgrades.AddRange(level1_upgrades);
         else if (building_level == 2)
-            available_upgrades = new List<Upgrade>(level2_upgrades);
+            available_upgrades.AddRange(level2_upgrades);
         else if (building_level == 3)
-            available_upgrades = new List<Upgrade>(level3_upgrades);
+            available_upgrades.AddRange(level3_upgrades);
         else if (building_level == 4)
-            available_upgrades = new List<Upgrade>(level4_upgrades);
+            available_upgrades.AddRange(level4_upgrades);
     }
 
-    public void TryUpgrade(int upgrade_number) // 1 to 4 based on which upgrade
+    public virtual void TryUpgrade(int upgrade_number) // 1 to 4 based on which upgrade
     {
         // Check to see if player has sufficient funds
         if (available_upgrades[upgrade_number].upgrade_cost > player_resources.money)
