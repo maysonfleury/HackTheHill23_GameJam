@@ -1,1 +1,1 @@
-# HackTheHill23_GameJam
+# Environmental Crisis Game
