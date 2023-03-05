@@ -16,6 +16,9 @@ public class Building : MonoBehaviour
     [SerializeField] private List<Upgrade> level4_upgrades;
 
     [SerializeField] private GameObject Building_UI;
+    [SerializeField] private GameObject Building_Quad;
+    [SerializeField] private GameObject UpgradedBuildingModel;
+    [SerializeField] private GameObject UpgradeFX_Prefab;
 
     private void Start() 
     {
@@ -38,13 +41,25 @@ public class Building : MonoBehaviour
         building_level += 1;
 
         if (building_level == 1)
+        {
             available_upgrades.AddRange(level1_upgrades);
+        }
         else if (building_level == 2)
+        {
             available_upgrades.AddRange(level2_upgrades);
+            Building_Quad.SetActive(true);
+        }
         else if (building_level == 3)
             available_upgrades.AddRange(level3_upgrades);
         else if (building_level == 4)
             available_upgrades.AddRange(level4_upgrades);
+
+        if(UpgradedBuildingModel != null)
+        {
+            UpgradedBuildingModel.SetActive(true);
+            Instantiate(UpgradeFX_Prefab, UpgradedBuildingModel.GetComponent<Collider>().bounds.center, Quaternion.identity);
+            gameObject.SetActive(false);
+        }
     }
 
     public virtual void NextYear()
