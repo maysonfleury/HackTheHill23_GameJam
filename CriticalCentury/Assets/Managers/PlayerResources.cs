@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerResources : MonoBehaviour
 {
@@ -9,8 +10,15 @@ public class PlayerResources : MonoBehaviour
     public int emissions;
     public int happiness; 
 
-    public readonly List<Upgrade> active_upgrades;
+    [SerializeField] private TextMeshProUGUI money_text;
+
+    public List<Upgrade> active_upgrades;
     [SerializeField] private EnergyCentre energy_centre;
+
+    private void Start() 
+    {
+        money_text.text = "Money: $" + money;
+    }
 
     public void AddUpgrade(Upgrade upgrade)
     {
@@ -22,6 +30,12 @@ public class PlayerResources : MonoBehaviour
         active_upgrades.Remove(upgrade);
     }
 
+    public void Pay(int cost)
+    {
+        money -= cost;
+        money_text.text = "Money: $" + money;
+    }
+
     public void UpdateResources()
     {
         foreach(Upgrade upgrade in active_upgrades)
@@ -31,7 +45,5 @@ public class PlayerResources : MonoBehaviour
             emissions += upgrade.emission_output;
             happiness += upgrade.happiness_output;
         }
-        
-
     }
 }

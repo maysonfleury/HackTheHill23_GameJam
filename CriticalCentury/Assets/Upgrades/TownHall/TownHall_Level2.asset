@@ -12,3 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa302eb6f6ba44146af19eed1025178b, type: 3}
   m_Name: TownHall_Level2
   m_EditorClassIdentifier: 
+  upgrade_name: Town Hall - Level 2
+  upgrade_description: 
+  upgrade_cost: 0
+  upgrade_duration: 0
+  prerequisites: []
+  money_output: 0
+  energy_output: 0
+  emission_output: 0
+  happiness_output: 0
+  triggered_event: {fileID: 0}

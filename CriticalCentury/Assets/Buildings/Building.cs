@@ -5,12 +5,11 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {    
     private GameManager game_manager;
-    private PlayerResources player_resources;
+    [SerializeField] public PlayerResources player_resources;
 
     [SerializeField] private int building_level; 
-    [SerializeField] private List<Sprite> building_icons;
 
-    [SerializeField] private List<Upgrade> available_upgrades;
+    public List<Upgrade> available_upgrades;
     [SerializeField] private List<Upgrade> level1_upgrades;
     [SerializeField] private List<Upgrade> level2_upgrades;
     [SerializeField] private List<Upgrade> level3_upgrades;
@@ -19,6 +18,16 @@ public class Building : MonoBehaviour
     private void Start() 
     {
         player_resources = FindObjectOfType<PlayerResources>();
+    }
+
+    public void AddUpgrade(Upgrade upgrade)
+    {
+        player_resources.AddUpgrade(upgrade);
+    }
+
+    public void PayUpgrade(int cost)
+    {
+        player_resources.Pay(cost);
     }
 
     public void UpgradeBuilding()
@@ -35,13 +44,30 @@ public class Building : MonoBehaviour
             available_upgrades.AddRange(level4_upgrades);
     }
 
-    public virtual void TryUpgrade(int upgrade_number) // 1 to 4 based on which upgrade
+    public virtual void NextYear()
+    {
+        return;
+    }
+
+    public bool TryLoadUpgrade(int cost)
+    {
+        if (cost > player_resources.money)
+        {
+            //game_manager.AlertPlayer("Insufficient Funds!");
+            Debug.Log("Insufficient Funds!");
+            return false;
+        }
+        return true;
+    }
+
+    public virtual bool TryUpgrade(int upgrade_number) // 1 to 4 based on which upgrade
     {
         // Check to see if player has sufficient funds
         if (available_upgrades[upgrade_number].upgrade_cost > player_resources.money)
         {
-            game_manager.AlertPlayer("Insufficient Funds!");
-            return;
+            //game_manager.AlertPlayer("Insufficient Funds!");
+            Debug.Log("Insufficient Funds!");
+            return false;
         }
 
         // Check to see if player has the prerequisities 
@@ -50,10 +76,13 @@ public class Building : MonoBehaviour
             if (!player_resources.active_upgrades.Contains(upgrade))
             {
                 game_manager.AlertPlayer("Missing the following prerequisites:");
-                return;
+                Debug.Log("Missing the following prerequisites");
+                return false;
             }
         }
 
-        player_resources.AddUpgrade(available_upgrades[upgrade_number]);
+        return true;
+
+        //player_resources.AddUpgrade(available_upgrades[upgrade_number]);
     }
 }
