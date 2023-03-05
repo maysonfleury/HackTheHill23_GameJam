@@ -44,7 +44,7 @@ public class CameraControl : MonoBehaviour
 
     private void Start()
     {
-        Initialize(Vector3.zero, 15f, 15f, 10f, 10f, 45f, 5f, 2f, 8f);
+        Initialize(Vector3.zero, 20f, 20f, 15f, 15f, 45f, 5f, 2f, 8f);
     }
 
     private void Initialize(Vector3 center, float right, float left, float up, float down, float angle, float zoom, float zoomMin, float zoomMax)
