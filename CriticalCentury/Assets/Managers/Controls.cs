@@ -28,7 +28,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
             ""id"": ""e0587920-73d9-4fa3-8598-99fa6d638a4d"",
             ""actions"": [
                 {
-                    ""name"": ""Move Camera"",
+                    ""name"": ""Move"",
                     ""type"": ""Button"",
                     ""id"": ""4599e8e5-d42f-4e71-9cb0-37b7bef0e1c8"",
                     ""expectedControlType"": ""Button"",
@@ -44,6 +44,60 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Mouse Scroll"",
+                    ""type"": ""Value"",
+                    ""id"": ""6705ef78-5381-4dd0-adb9-873a377a8dca"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Mouse Position"",
+                    ""type"": ""Value"",
+                    ""id"": ""ac41fff6-18a3-4a06-8297-4c5c464f6c90"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Touch Zoom"",
+                    ""type"": ""Button"",
+                    ""id"": ""d05702b3-0797-4ed9-812e-0c5c94656dba"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Touch Position 0"",
+                    ""type"": ""Value"",
+                    ""id"": ""4d93591d-a9df-4220-ba7d-5ee3d5fc4d2d"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Touch Position 1"",
+                    ""type"": ""Value"",
+                    ""id"": ""20463e1e-c1ec-4f1d-a3c8-0fb29f535767"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pointer Position"",
+                    ""type"": ""Value"",
+                    ""id"": ""dd6ea05c-a81b-4a84-ae56-7feea3cea4ec"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -54,7 +108,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move Camera"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -65,7 +119,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move Camera"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -90,6 +144,105 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""Move Delta"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2392fa0d-d8bf-4f9a-bdfc-21b432a1450b"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouse Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""37082be7-5125-4d73-9f8e-35e4ea316061"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouse Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""aada2331-7442-4f8a-ba44-bfa8170e0ec7"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Touch Zoom"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""a3c27429-0538-4b98-b92d-f3b5c679279e"",
+                    ""path"": ""<Touchscreen>/touch0/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Touch Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""58d0b55f-aa8d-4138-a5f7-009a0aff9353"",
+                    ""path"": ""<Touchscreen>/touch1/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Touch Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1e5e05de-4480-4fb7-89fc-f7b7a94f7570"",
+                    ""path"": ""<Touchscreen>/touch0/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Touch Position 0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3fb606a1-f18f-43ab-806e-75ad65d22467"",
+                    ""path"": ""<Touchscreen>/touch1/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Touch Position 1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9dda04c6-0930-4ebe-9398-e285aacfaa59"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pointer Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""86002ee0-8ca0-466f-93a6-dbafa93b7e14"",
+                    ""path"": ""<Touchscreen>/primaryTouch/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pointer Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -98,8 +251,14 @@ public partial class @Controls : IInputActionCollection2, IDisposable
 }");
         // Main
         m_Main = asset.FindActionMap("Main", throwIfNotFound: true);
-        m_Main_MoveCamera = m_Main.FindAction("Move Camera", throwIfNotFound: true);
+        m_Main_Move = m_Main.FindAction("Move", throwIfNotFound: true);
         m_Main_MoveDelta = m_Main.FindAction("Move Delta", throwIfNotFound: true);
+        m_Main_MouseScroll = m_Main.FindAction("Mouse Scroll", throwIfNotFound: true);
+        m_Main_MousePosition = m_Main.FindAction("Mouse Position", throwIfNotFound: true);
+        m_Main_TouchZoom = m_Main.FindAction("Touch Zoom", throwIfNotFound: true);
+        m_Main_TouchPosition0 = m_Main.FindAction("Touch Position 0", throwIfNotFound: true);
+        m_Main_TouchPosition1 = m_Main.FindAction("Touch Position 1", throwIfNotFound: true);
+        m_Main_PointerPosition = m_Main.FindAction("Pointer Position", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -159,14 +318,26 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     // Main
     private readonly InputActionMap m_Main;
     private IMainActions m_MainActionsCallbackInterface;
-    private readonly InputAction m_Main_MoveCamera;
+    private readonly InputAction m_Main_Move;
     private readonly InputAction m_Main_MoveDelta;
+    private readonly InputAction m_Main_MouseScroll;
+    private readonly InputAction m_Main_MousePosition;
+    private readonly InputAction m_Main_TouchZoom;
+    private readonly InputAction m_Main_TouchPosition0;
+    private readonly InputAction m_Main_TouchPosition1;
+    private readonly InputAction m_Main_PointerPosition;
     public struct MainActions
     {
         private @Controls m_Wrapper;
         public MainActions(@Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MoveCamera => m_Wrapper.m_Main_MoveCamera;
+        public InputAction @Move => m_Wrapper.m_Main_Move;
         public InputAction @MoveDelta => m_Wrapper.m_Main_MoveDelta;
+        public InputAction @MouseScroll => m_Wrapper.m_Main_MouseScroll;
+        public InputAction @MousePosition => m_Wrapper.m_Main_MousePosition;
+        public InputAction @TouchZoom => m_Wrapper.m_Main_TouchZoom;
+        public InputAction @TouchPosition0 => m_Wrapper.m_Main_TouchPosition0;
+        public InputAction @TouchPosition1 => m_Wrapper.m_Main_TouchPosition1;
+        public InputAction @PointerPosition => m_Wrapper.m_Main_PointerPosition;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -176,29 +347,71 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_MainActionsCallbackInterface != null)
             {
-                @MoveCamera.started -= m_Wrapper.m_MainActionsCallbackInterface.OnMoveCamera;
-                @MoveCamera.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnMoveCamera;
-                @MoveCamera.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnMoveCamera;
+                @Move.started -= m_Wrapper.m_MainActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnMove;
                 @MoveDelta.started -= m_Wrapper.m_MainActionsCallbackInterface.OnMoveDelta;
                 @MoveDelta.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnMoveDelta;
                 @MoveDelta.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnMoveDelta;
+                @MouseScroll.started -= m_Wrapper.m_MainActionsCallbackInterface.OnMouseScroll;
+                @MouseScroll.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnMouseScroll;
+                @MouseScroll.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnMouseScroll;
+                @MousePosition.started -= m_Wrapper.m_MainActionsCallbackInterface.OnMousePosition;
+                @MousePosition.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnMousePosition;
+                @MousePosition.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnMousePosition;
+                @TouchZoom.started -= m_Wrapper.m_MainActionsCallbackInterface.OnTouchZoom;
+                @TouchZoom.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnTouchZoom;
+                @TouchZoom.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnTouchZoom;
+                @TouchPosition0.started -= m_Wrapper.m_MainActionsCallbackInterface.OnTouchPosition0;
+                @TouchPosition0.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnTouchPosition0;
+                @TouchPosition0.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnTouchPosition0;
+                @TouchPosition1.started -= m_Wrapper.m_MainActionsCallbackInterface.OnTouchPosition1;
+                @TouchPosition1.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnTouchPosition1;
+                @TouchPosition1.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnTouchPosition1;
+                @PointerPosition.started -= m_Wrapper.m_MainActionsCallbackInterface.OnPointerPosition;
+                @PointerPosition.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnPointerPosition;
+                @PointerPosition.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnPointerPosition;
             }
             m_Wrapper.m_MainActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @MoveCamera.started += instance.OnMoveCamera;
-                @MoveCamera.performed += instance.OnMoveCamera;
-                @MoveCamera.canceled += instance.OnMoveCamera;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
                 @MoveDelta.started += instance.OnMoveDelta;
                 @MoveDelta.performed += instance.OnMoveDelta;
                 @MoveDelta.canceled += instance.OnMoveDelta;
+                @MouseScroll.started += instance.OnMouseScroll;
+                @MouseScroll.performed += instance.OnMouseScroll;
+                @MouseScroll.canceled += instance.OnMouseScroll;
+                @MousePosition.started += instance.OnMousePosition;
+                @MousePosition.performed += instance.OnMousePosition;
+                @MousePosition.canceled += instance.OnMousePosition;
+                @TouchZoom.started += instance.OnTouchZoom;
+                @TouchZoom.performed += instance.OnTouchZoom;
+                @TouchZoom.canceled += instance.OnTouchZoom;
+                @TouchPosition0.started += instance.OnTouchPosition0;
+                @TouchPosition0.performed += instance.OnTouchPosition0;
+                @TouchPosition0.canceled += instance.OnTouchPosition0;
+                @TouchPosition1.started += instance.OnTouchPosition1;
+                @TouchPosition1.performed += instance.OnTouchPosition1;
+                @TouchPosition1.canceled += instance.OnTouchPosition1;
+                @PointerPosition.started += instance.OnPointerPosition;
+                @PointerPosition.performed += instance.OnPointerPosition;
+                @PointerPosition.canceled += instance.OnPointerPosition;
             }
         }
     }
     public MainActions @Main => new MainActions(this);
     public interface IMainActions
     {
-        void OnMoveCamera(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
         void OnMoveDelta(InputAction.CallbackContext context);
+        void OnMouseScroll(InputAction.CallbackContext context);
+        void OnMousePosition(InputAction.CallbackContext context);
+        void OnTouchZoom(InputAction.CallbackContext context);
+        void OnTouchPosition0(InputAction.CallbackContext context);
+        void OnTouchPosition1(InputAction.CallbackContext context);
+        void OnPointerPosition(InputAction.CallbackContext context);
     }
 }
