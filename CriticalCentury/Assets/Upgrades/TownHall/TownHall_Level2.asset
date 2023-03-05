@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgrade_name: Town Hall - Level 2
   upgrade_description: 
-  upgrade_cost: 0
-  upgrade_duration: 0
+  upgrade_cost: 1000
+  upgrade_duration: 1
   prerequisites: []
   money_output: 0
   energy_output: 0
   emission_output: 0
   happiness_output: 0
-  triggered_event: {fileID: 0}
+  triggered_event: {fileID: 11400000, guid: 383da9957ba994699966ed75985523f1, type: 2}

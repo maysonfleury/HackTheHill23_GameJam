@@ -13,7 +13,7 @@ public class TownHall : Building
     // Start is called before the first frame update
     void Start()
     {
-        PopulateUpgrades();  
+        PopulateUpgrades();
     }
 
     public override void NextYear()
@@ -33,7 +33,7 @@ public class TownHall : Building
     public void PopulateUpgrades()
     {
         int index = 0;
-        building_lvl.text = "Building Level: " + building_level;
+        //building_lvl.text = "Building Level: " + building_level;
         
         foreach(Upgrade upgrade in available_upgrades)
         {

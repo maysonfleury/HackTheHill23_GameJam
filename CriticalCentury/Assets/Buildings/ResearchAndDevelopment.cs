@@ -16,7 +16,7 @@ public class ResearchAndDevelopment : Building
 
     private void Start() 
     {
-        UpgradeBuilding();
+        //UpgradeBuilding();
         PopulateUpgrades();     
     }
 
@@ -37,10 +37,11 @@ public class ResearchAndDevelopment : Building
     public void PopulateUpgrades()
     {
         int index = 0;
-        building_lvl.text = "Building Level: " + building_level;
+        //building_lvl.text = "Building Level: " + building_level;
         
         foreach(Upgrade upgrade in available_upgrades)
         {
+            if(index > 3) break;
             if (upgrade_buttons[index].time_remaining == 0)
                 queued_upgrades.Remove(index); 
                 

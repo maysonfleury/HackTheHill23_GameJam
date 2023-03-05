@@ -17,13 +17,18 @@ public class Building : MonoBehaviour
 
     [SerializeField] private GameObject Building_UI;
     [SerializeField] private GameObject Building_Quad;
-    [SerializeField] private GameObject UpgradedBuildingModel;
+    [SerializeField] private List<GameObject> UpgradedBuildingModels;
     [SerializeField] private GameObject UpgradeFX_Prefab;
 
-    private void Start() 
+    private void Awake() 
     {
         player_resources = FindObjectOfType<PlayerResources>();
         game_manager = FindObjectOfType<GameManager>();
+    }
+
+    private void Start()
+    {
+        Building_UI.SetActive(false);
     }
 
     public void AddUpgrade(Upgrade upgrade)
@@ -43,23 +48,28 @@ public class Building : MonoBehaviour
         if (building_level == 1)
         {
             available_upgrades.AddRange(level1_upgrades);
+            if(UpgradedBuildingModels.Count > 0)
+            {
+                UpgradedBuildingModels[0].SetActive(false);
+                UpgradedBuildingModels[1].SetActive(true);
+                Instantiate(UpgradeFX_Prefab, UpgradedBuildingModels[1].GetComponent<Collider>().bounds.center, Quaternion.identity);
+            }
         }
         else if (building_level == 2)
         {
             available_upgrades.AddRange(level2_upgrades);
             Building_Quad.SetActive(true);
+            if(UpgradedBuildingModels.Count > 1)
+            {
+                UpgradedBuildingModels[1].SetActive(false);
+                UpgradedBuildingModels[2].SetActive(true);
+                Instantiate(UpgradeFX_Prefab, UpgradedBuildingModels[2].GetComponent<Collider>().bounds.center, Quaternion.identity);
+            }
         }
         else if (building_level == 3)
             available_upgrades.AddRange(level3_upgrades);
         else if (building_level == 4)
             available_upgrades.AddRange(level4_upgrades);
-
-        if(UpgradedBuildingModel != null)
-        {
-            UpgradedBuildingModel.SetActive(true);
-            Instantiate(UpgradeFX_Prefab, UpgradedBuildingModel.GetComponent<Collider>().bounds.center, Quaternion.identity);
-            gameObject.SetActive(false);
-        }
     }
 
     public virtual void NextYear()

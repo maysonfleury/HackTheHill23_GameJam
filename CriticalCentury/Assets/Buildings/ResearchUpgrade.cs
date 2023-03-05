@@ -14,7 +14,7 @@ public class ResearchUpgrade : MonoBehaviour
     
     public int time_remaining;
 
-    private void Start() 
+    private void Awake() 
     {
         upgrade_background = this.gameObject.transform.GetChild(0).gameObject.GetComponent<Image>();
         upgrade_title = this.gameObject.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
