@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraControl : MonoBehaviour
 {
@@ -78,6 +79,7 @@ public class CameraControl : MonoBehaviour
         _input.Main.Move.canceled += _ => MoveCanceled();
         _input.Main.TouchZoom.started += _ => ZoomStarted();
         _input.Main.TouchZoom.canceled += _ => ZoomCanceled();
+        _input.Main.PointerClick.performed += _ => ScreenClicked();
     }
 
     private void OnDisable()
@@ -86,6 +88,7 @@ public class CameraControl : MonoBehaviour
         _input.Main.Move.canceled -= _ => MoveCanceled();
         _input.Main.TouchZoom.started -= _ => ZoomStarted();
         _input.Main.TouchZoom.canceled -= _ => ZoomCanceled();
+        _input.Main.PointerClick.performed -= _ => ScreenClicked();
         _input.Disable();
     }
 
@@ -117,6 +120,21 @@ public class CameraControl : MonoBehaviour
     private void ZoomCanceled()
     {
         _zooming = false;
+    }
+
+    private void ScreenClicked()
+    {
+        Vector2 position = _input.Main.PointerPosition.ReadValue<Vector2>();
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(position);
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.transform.gameObject.GetComponent<Building>() != null)
+            {
+                Debug.Log(hit.transform.name + " was clicked on.");
+                hit.transform.gameObject.GetComponent<Building>().ShowUI();
+            }
+        }
     }
 
     private void Update()

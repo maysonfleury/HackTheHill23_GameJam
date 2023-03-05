@@ -15,6 +15,8 @@ public class Building : MonoBehaviour
     [SerializeField] private List<Upgrade> level3_upgrades;
     [SerializeField] private List<Upgrade> level4_upgrades;
 
+    [SerializeField] private GameObject Building_UI;
+
     private void Start() 
     {
         player_resources = FindObjectOfType<PlayerResources>();
@@ -84,5 +86,15 @@ public class Building : MonoBehaviour
         return true;
 
         //player_resources.AddUpgrade(available_upgrades[upgrade_number]);
+    }
+
+    public void ShowUI()
+    {
+        Building_UI.SetActive(true);
+    }
+
+    public void HideUI()
+    {
+        Building_UI.SetActive(false);
     }
 }
