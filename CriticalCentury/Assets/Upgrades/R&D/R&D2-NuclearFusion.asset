@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa302eb6f6ba44146af19eed1025178b, type: 3}
-  m_Name: R&D1-Galvanometer
+  m_Name: R&D2-NuclearFusion
   m_EditorClassIdentifier: 
-  upgrade_name: Galvanometer
-  upgrade_description: Allows more accurate monitoring of energy
-  upgrade_cost: 1000
-  upgrade_duration: 1
-  prerequisites: []
+  upgrade_name: Nuclear Fusion
+  upgrade_description: Unlocks production of nuclear energy
+  upgrade_cost: 5000
+  upgrade_duration: 5
+  prerequisites:
+  - {fileID: 11400000, guid: 361ff92ea3d4a4601bbc1b68ee0aed0a, type: 2}
   money_output: 0
   energy_output: 0
   emission_output: 0
   happiness_output: 0
-  triggered_event: {fileID: 11400000, guid: 383da9957ba994699966ed75985523f1, type: 2}
+  triggered_event: {fileID: 0}

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {    
-    private GameManager game_manager;
+    [SerializeField] GameManager game_manager;
     [SerializeField] public PlayerResources player_resources;
 
-    [SerializeField] private int building_level; 
+    [SerializeField] public int building_level; 
 
     public List<Upgrade> available_upgrades;
     [SerializeField] private List<Upgrade> level1_upgrades;
@@ -18,6 +18,7 @@ public class Building : MonoBehaviour
     private void Start() 
     {
         player_resources = FindObjectOfType<PlayerResources>();
+        game_manager = FindObjectOfType<GameManager>();
     }
 
     public void AddUpgrade(Upgrade upgrade)
@@ -53,8 +54,8 @@ public class Building : MonoBehaviour
     {
         if (cost > player_resources.money)
         {
-            //game_manager.AlertPlayer("Insufficient Funds!");
-            Debug.Log("Insufficient Funds!");
+            StartCoroutine(game_manager.AlertPlayer("Insufficient Funds!"));
+            //Debug.Log("Insufficient Funds!");
             return false;
         }
         return true;
@@ -75,8 +76,7 @@ public class Building : MonoBehaviour
         {
             if (!player_resources.active_upgrades.Contains(upgrade))
             {
-                game_manager.AlertPlayer("Missing the following prerequisites:");
-                Debug.Log("Missing the following prerequisites");
+                StartCoroutine(game_manager.AlertPlayer("Missing the following prerequisite: " + upgrade.upgrade_name));
                 return false;
             }
         }

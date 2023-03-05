@@ -48,10 +48,11 @@ public class EnergySource : MonoBehaviour
         else 
             energy_text = "Solar";
 
+        energy_background.color = new Color32(255,255,255,255);
         energy_title.text = energy_text;
         energy_output.text = "Current Output:\n0 kWh";
         emission_output.text = "0 kg CO2";
-        fuel_load.text = "Load 0/1";
+        fuel_load.text = "Load 0/0";
         fuel_load_parent.SetActive(true);
     }
 

@@ -18,7 +18,7 @@ public class EnergyCentre : Building
     // coal, oil, gas, nuclear, wind, solar
 
     [SerializeField] public int cost;
-    [SerializeField] private List<EnergySource> energy_sources;
+    [SerializeField] public List<EnergySource> energy_sources;
 
     private void Start() 
     {
@@ -50,6 +50,7 @@ public class EnergyCentre : Building
     public void UnlockEnergyType(int index)
     {
         energy_sources[index].UnlockEnergySource(index);
+        load_caps[index] += 1;
     }
 
     void UpdateEnergyValues()

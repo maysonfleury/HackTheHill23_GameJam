@@ -12,9 +12,12 @@ public class ResearchAndDevelopment : Building
     public List<ResearchUpgrade> upgrade_buttons;
     public List<int> queued_upgrades;
 
+    public TextMeshProUGUI building_lvl;
+
     private void Start() 
     {
-        PopulateUpgrades();
+        UpgradeBuilding();
+        PopulateUpgrades();     
     }
 
     public override void NextYear()
@@ -34,6 +37,8 @@ public class ResearchAndDevelopment : Building
     public void PopulateUpgrades()
     {
         int index = 0;
+        building_lvl.text = "Building Level: " + building_level;
+        
         foreach(Upgrade upgrade in available_upgrades)
         {
             if (upgrade_buttons[index].time_remaining == 0)

@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa302eb6f6ba44146af19eed1025178b, type: 3}
-  m_Name: R&D1-Galvanometer
+  m_Name: R&D1-NaturalGasProcessing
   m_EditorClassIdentifier: 
-  upgrade_name: Galvanometer
-  upgrade_description: Allows more accurate monitoring of energy
-  upgrade_cost: 1000
-  upgrade_duration: 1
-  prerequisites: []
+  upgrade_name: Natural Gas
+  upgrade_description: Allows production of gas pipes
+  upgrade_cost: 2500
+  upgrade_duration: 2
+  prerequisites:
+  - {fileID: 11400000, guid: 33f6ef9589fe245d1bb7587f38e7b845, type: 2}
   money_output: 0
   energy_output: 0
   emission_output: 0
   happiness_output: 0
-  triggered_event: {fileID: 11400000, guid: 383da9957ba994699966ed75985523f1, type: 2}
+  triggered_event: {fileID: 0}

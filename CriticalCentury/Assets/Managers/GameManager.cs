@@ -10,18 +10,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI year_text;
     [SerializeField] PlayerResources player_resources;
 
+    [SerializeField] TextMeshProUGUI alert_text;
     [SerializeField] List<Building> buildings;
 
     // Start is called before the first frame update
     void Start()
     {
         current_year = 1950;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void NextYear()
@@ -57,9 +52,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AlertPlayer(string alert)
+    public IEnumerator AlertPlayer(string alert)
     {
-
+        alert_text.text = alert;
+        yield return new WaitForSeconds(2);
+        alert_text.text = "";
     }
 
     void PlayerReport()
